@@ -11,6 +11,10 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+// Import device info
+import { Device } from '@ionic-native/device';
+// Import ionic2-rating module
+import { Ionic2RatingModule } from 'ionic2-rating';
 @NgModule({
   declarations: [
     MyApp,
@@ -21,7 +25,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    Ionic2RatingModule // add ionic2-rating module here
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -34,6 +39,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+    Device,//add for device info
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
